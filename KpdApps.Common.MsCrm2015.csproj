@@ -32,9 +32,15 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>KpdApps.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="KpdApps.Common, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\KpdApps.Common.1.0.8\lib\net40\KpdApps.Common.dll</HintPath>
+    <Reference Include="KpdApps.Common, Version=1.0.16.0, Culture=neutral, PublicKeyToken=895cd312e69c2f16, processorArchitecture=MSIL">
+      <HintPath>packages\KpdApps.Common.1.0.16\lib\net40\KpdApps.Common.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Crm.Sdk.Proxy">
@@ -68,6 +74,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="KpdApps.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
