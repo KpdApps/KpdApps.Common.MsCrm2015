@@ -72,6 +72,7 @@
     <Compile Include="Extensions\PluginExecutionContextExtensions.cs" />
     <Compile Include="Extensions\OrganizationServiceExtensions.cs" />
     <Compile Include="Extensions\SystemServiceSwitcher.cs" />
+    <Compile Include="Helpers\CrmMetadataHelper.cs" />
     <Compile Include="PluginState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
