@@ -30,7 +30,24 @@ namespace KpdApps.Common.MsCrm2015
 
 		public void Execute(IServiceProvider serviceProvider)
 		{
-			throw new NotImplementedException();
+			PluginState state = CreatePluginState(serviceProvider);
+
+			try
+			{
+				ExecuteInternal(state);
+			}
+			catch (Exception)
+			{
+				//TODO: TraceError
+				throw;
+			}
+		}
+
+		public abstract void ExecuteInternal(PluginState state);
+
+		public virtual PluginState CreatePluginState(IServiceProvider serviceProvider)
+		{
+			return new PluginState(serviceProvider);
 		}
 	}
 }
