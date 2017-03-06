@@ -155,5 +155,74 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 				properties[name] = new EntityReference(type, value);
 			}
 		}
+
+		public static int GetNumberValue(this AttributeCollection properties, string name)
+		{
+			if (!properties.Contains(name))
+				return 0;
+
+			object property = properties[name];
+			return property != null ? Convert.ToInt32(property) : 0;
+		}
+
+		public static decimal GetMoneyValue(this AttributeCollection properties, string name)
+		{
+			if (!properties.Contains(name))
+				return 0;
+
+			object property = properties[name];
+			Money num = property as Money;
+			return num != null ? Convert.ToDecimal(num.Value) : 0;
+		}
+
+		public static double GetFloatValue(this AttributeCollection properties, string name)
+		{
+			if (!properties.Contains(name))
+				return 0;
+
+			object property = properties[name];
+			return property != null ? Convert.ToDouble(property) : 0;
+		}
+
+		public static decimal GetDecimalValue(this AttributeCollection properties, string name)
+		{
+			if (!properties.Contains(name))
+				return 0;
+
+			object property = properties[name];
+			return property != null ? Convert.ToDecimal(property) : 0;
+		}
+
+		public static void SetNumberValue(this AttributeCollection properties, string name, int value)
+		{
+			if (!properties.Contains(name))
+				properties.Add(name, value);
+			else
+				properties[name] = value;
+		}
+
+		public static void SetMoneyValue(this AttributeCollection properties, string name, decimal value)
+		{
+			if (!properties.Contains(name))
+				properties.Add(name, new Money(value));
+			else
+				properties[name] = new Money(value);
+		}
+
+		public static void SetDecimalValue(this AttributeCollection properties, string name, decimal value)
+		{
+			if (!properties.Contains(name))
+				properties.Add(name, value);
+			else
+				properties[name] = value;
+		}
+
+		public static void SetFloatValue(this AttributeCollection properties, string name, double value)
+		{
+			if (!properties.Contains(name))
+				properties.Add(name, value);
+			else
+				properties[name] = value;
+		}
 	}
 }
