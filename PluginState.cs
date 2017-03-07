@@ -3,45 +3,56 @@ using Microsoft.Xrm.Sdk;
 
 namespace KpdApps.Common.MsCrm2015
 {
-	public class PluginState
-	{
-		private IOrganizationService _service;
+    public class PluginState
+    {
+        public virtual IServiceProvider Provider { get; private set; }
 
-		private IPluginExecutionContext _context;
+        private IPluginExecutionContext _context;
+        public virtual IPluginExecutionContext Context => _context ?? (_context = (IPluginExecutionContext)Provider.GetService(typeof(IPluginExecutionContext)));
 
-		public virtual IServiceProvider Provider { get; private set; }
+        private IOrganizationService _service;
+        public virtual IOrganizationService Service
+        {
+            get
+            {
+                if (_service != null)
+                    return _service;
 
-		public virtual IPluginExecutionContext Context => _context ?? (_context = (IPluginExecutionContext)Provider.GetService(typeof(IPluginExecutionContext)));
+                IOrganizationServiceFactory factory = (IOrganizationServiceFactory)Provider.GetService(typeof(IOrganizationServiceFactory));
+                _service = factory.CreateOrganizationService(this.Context.UserId);
+                return _service;
+            }
+        }
 
-		public virtual IOrganizationService Service
-		{
-			get
-			{
-				if (_service != null)
-					return _service;
+        private ITracingService _tracingService;
+        public virtual ITracingService TracingService
+        {
+            get
+            {
+                if (_tracingService != null)
+                    return _tracingService;
 
-				IOrganizationServiceFactory factory = (IOrganizationServiceFactory)Provider.GetService(typeof(IOrganizationServiceFactory));
-				_service = factory.CreateOrganizationService(this.Context.UserId);
-				return _service;
-			}
-		}
+                _tracingService = (ITracingService)Provider.GetService(typeof(ITracingService));
+                return _tracingService;
+            }
+        }
 
-		public PluginState(IServiceProvider provider)
-		{
-			if (provider == null)
-				throw new ArgumentNullException(nameof(provider));
+        public PluginState(IServiceProvider provider)
+        {
+            if (provider == null)
+                throw new ArgumentNullException(nameof(provider));
 
-			Provider = provider;
-		}
+            Provider = provider;
+        }
 
-		public T GetTarget<T>() where T : class
-		{
-			if (Context.InputParameters.Contains("Target"))
-			{
-				return (T)Context.InputParameters["Target"];
-			}
+        public T GetTarget<T>() where T : class
+        {
+            if (Context.InputParameters.Contains("Target"))
+            {
+                return (T)Context.InputParameters["Target"];
+            }
 
-			return default(T); ;
-		}
-	}
+            return default(T); ;
+        }
+    }
 }

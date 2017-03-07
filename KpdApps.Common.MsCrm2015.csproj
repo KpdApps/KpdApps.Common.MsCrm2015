@@ -65,12 +65,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasePlugin.cs" />
+    <Compile Include="BasePluginAction.cs" />
     <Compile Include="CrmOrganizationServiceProxy.cs" />
     <Compile Include="Extensions\AttributeCollectionExtensions.cs" />
     <Compile Include="Extensions\EntityExtensions.cs" />
     <Compile Include="Extensions\EntityReferenceExtensions.cs" />
     <Compile Include="Extensions\PluginExecutionContextExtensions.cs" />
     <Compile Include="Extensions\OrganizationServiceExtensions.cs" />
+    <Compile Include="Extensions\PluginStateTraceExtensions.cs" />
     <Compile Include="Extensions\SystemServiceSwitcher.cs" />
     <Compile Include="Helpers\CrmMetadataHelper.cs" />
     <Compile Include="PluginState.cs" />
