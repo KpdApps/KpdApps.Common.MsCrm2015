@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasePlugin.cs" />
+    <Compile Include="BasePluginAction.cs" />
     <Compile Include="CrmOrganizationServiceProxy.cs" />
     <Compile Include="Extensions\AttributeCollectionExtensions.cs" />
     <Compile Include="Extensions\EntityExtensions.cs" />
