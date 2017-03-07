@@ -29,17 +29,19 @@ namespace KpdApps.Common.MsCrm2015
 
         }
 
+        public PluginState State { get; private set; }
+
         public void Execute(IServiceProvider serviceProvider)
         {
-            PluginState state = CreatePluginState(serviceProvider);
+            State = CreatePluginState(serviceProvider);
 
             try
             {
-                ExecuteInternal(state);
+                ExecuteInternal(State);
             }
             catch (Exception ex)
             {
-                state?.TraceError(ex);
+                State?.TracingService.TraceError(ex);
                 throw;
             }
         }
