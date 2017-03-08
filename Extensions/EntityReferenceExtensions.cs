@@ -1,4 +1,5 @@
-﻿using Microsoft.Xrm.Sdk;
+﻿using System.Linq;
+using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
 
 namespace KpdApps.Common.MsCrm2015.Extensions
@@ -32,12 +33,12 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 		/// <param name="organizationService"></param>
 		/// <param name="columns"></param>
 		/// <returns></returns>
-		public static Entity ToEntity(this EntityReference entityReference, IOrganizationService organizationService, string[] columns = null)
+		public static Entity ToEntity(this EntityReference entityReference, IOrganizationService organizationService, params string[] columns)
 		{
 			return organizationService.Retrieve(
 					entityReference.LogicalName
 					, entityReference.Id
-					, columns == null ? new ColumnSet(true) : new ColumnSet(columns));
+					, !columns.Any() ? new ColumnSet(true) : new ColumnSet(columns));
 		}
 	}
 }
