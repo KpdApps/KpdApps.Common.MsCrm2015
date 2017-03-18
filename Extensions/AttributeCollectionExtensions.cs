@@ -225,5 +225,13 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 			object property = properties[name];
 			return property != null && Convert.ToBoolean(property);
 		}
+
+		public static void SetBooleanValue(this AttributeCollection properties, string name, bool value)
+		{
+			if (properties.Contains(name))
+				properties[name] = value;
+			else
+				properties.Add(name, value);
+		}
 	}
 }
