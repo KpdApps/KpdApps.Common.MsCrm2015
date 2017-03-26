@@ -52,7 +52,7 @@ namespace KpdApps.Common.MsCrm2015
 				return (T)Context.InputParameters["Target"];
 			}
 
-			return default(T); ;
+			return default(T);
 		}
 
 		public Entity TryGetPostImage(string name)
@@ -87,6 +87,16 @@ namespace KpdApps.Common.MsCrm2015
 				throw new ApplicationException($"Pre-image with name \"{name}\" not found.");
 
 			return image;
+		}
+
+		public EntityReference GetEntityMoniker()
+		{
+			if (Context.InputParameters.Contains("EntityMoniker"))
+			{
+				return (EntityReference)Context.InputParameters["EntityMoniker"];
+			}
+
+			throw new ApplicationException("EntityMoniker not found.");
 		}
 	}
 }
