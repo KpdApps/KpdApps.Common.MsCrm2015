@@ -45,5 +45,24 @@ namespace KpdApps.Common.MsCrm2015.Helpers
 				return metadata.EntityMetadata;
 			}
 		}
+
+		public static string GetPickListLabel(string entityName, string fieldName, int value, IOrganizationService service)
+		{
+			RetrieveAttributeRequest attributeRequest = new RetrieveAttributeRequest
+			{
+				EntityLogicalName = entityName,
+				LogicalName = fieldName,
+				RetrieveAsIfPublished = true
+			};
+
+			RetrieveAttributeResponse response = (RetrieveAttributeResponse)service.Execute(attributeRequest);
+			EnumAttributeMetadata attributeMetadata = (EnumAttributeMetadata)response.AttributeMetadata;
+			foreach (OptionMetadata optionMeta in attributeMetadata.OptionSet.Options)
+			{
+				if (optionMeta.Value == value)
+					return optionMeta.Label.UserLocalizedLabel.Label;
+			}
+			return string.Empty;
+		}
 	}
 }

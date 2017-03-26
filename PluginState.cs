@@ -67,7 +67,7 @@ namespace KpdApps.Common.MsCrm2015
 		{
 			var image = TryGetPostImage(name);
 			if (image == null)
-				throw new ApplicationException($"Post-image with {name} not found.");
+				throw new ApplicationException($"Post-image with name \"{name}\" not found.");
 
 			return image;
 		}
@@ -84,7 +84,7 @@ namespace KpdApps.Common.MsCrm2015
 		{
 			var image = TryGetPreImage(name);
 			if (image == null)
-				throw new ApplicationException($"Pre-image with name {name} not found.");
+				throw new ApplicationException($"Pre-image with name \"{name}\" not found.");
 
 			return image;
 		}
