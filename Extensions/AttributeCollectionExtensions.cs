@@ -233,5 +233,10 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 			else
 				properties.Add(name, value);
 		}
+
+		public static void ClearValue(this AttributeCollection properties, string name)
+		{
+			properties[name] = null;
+		}
 	}
 }
