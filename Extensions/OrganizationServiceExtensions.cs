@@ -86,9 +86,19 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 			return new SystemServiceSwitcher(service);
 		}
 
+		public static ExecuteWorkflowResponse ExecuteWorkflowWithRetry(this IOrganizationService service, Guid entityId, Guid workflowId, int retryTimes = 1)
+		{
+			ExecuteWorkflowRequest request = new ExecuteWorkflowRequest
+			{
+				EntityId = entityId,
+				WorkflowId = workflowId
+			};
+			return ExecuteWorkflowWithRetry(service, request, retryTimes);
+		}
+
 		public static ExecuteWorkflowResponse ExecuteWorkflowWithRetry(this IOrganizationService service, ExecuteWorkflowRequest request, int retryTimes)
 		{
-			var response = new ExecuteWorkflowResponse();
+			ExecuteWorkflowResponse response = new ExecuteWorkflowResponse();
 			int i = 0;
 			while (i < retryTimes)
 			{
