@@ -108,6 +108,16 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 			return DateTime.MinValue;
 		}
 
+		public static DateTime? GetNullableDateTime(this AttributeCollection properties, string name)
+		{
+			DateTime date = properties.GetDateTimeValue(name);
+			if (date == DateTime.MinValue)
+			{
+				return null;
+			}
+			return date;
+		}
+
 		public static void SetDateTimeValue(this AttributeCollection properties, string name, DateTime value)
 		{
 			if (properties.Contains(name))
@@ -234,9 +244,47 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 				properties.Add(name, value);
 		}
 
+		public static T GetAliasedValue<T>(this AttributeCollection properties, string aliasedEntityName, string attributeName)
+		{
+			const string aliasedTemplate = "{0}.{1}";
+
+			if (string.IsNullOrEmpty(aliasedEntityName))
+			{
+				throw new ArgumentNullException(nameof(aliasedEntityName));
+			}
+
+			if (string.IsNullOrEmpty(attributeName))
+			{
+				throw new ArgumentNullException(nameof(attributeName));
+			}
+
+			var aliasedAttrName = string.Format(aliasedTemplate, aliasedEntityName, attributeName);
+
+			if (!properties.Contains(aliasedAttrName))
+			{
+				return default(T);
+			}
+
+			var value = properties[aliasedAttrName];
+
+			//Если значение аттрибута нулевое или не типа AliasedValue - дефолтное значение 
+			if (!(value is AliasedValue))
+			{
+				return default(T);
+			}
+
+			var aliasedValue = ((AliasedValue)value).Value;
+			return (T)aliasedValue;
+		}
+
 		public static void ClearValue(this AttributeCollection properties, string name)
 		{
 			properties[name] = null;
+		}
+
+		public static bool ContainsNotNull(this AttributeCollection properties, string name)
+		{
+			return properties.Contains(name) && properties[name] != null;
 		}
 	}
 }
