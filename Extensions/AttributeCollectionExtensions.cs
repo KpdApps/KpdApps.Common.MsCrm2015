@@ -233,5 +233,38 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 			else
 				properties.Add(name, value);
 		}
+
+		public static T GetAliasedValue<T>(this AttributeCollection collection, string aliasedEntityName, string attributeName)
+		{
+			const string aliasedTemplate = "{0}.{1}";
+
+			if (string.IsNullOrEmpty(aliasedEntityName))
+			{
+				throw new ArgumentNullException(nameof(aliasedEntityName));
+			}
+
+			if (string.IsNullOrEmpty(attributeName))
+			{
+				throw new ArgumentNullException(nameof(attributeName));
+			}
+
+			var aliasedAttrName = string.Format(aliasedTemplate, aliasedEntityName, attributeName);
+
+			if (!collection.Contains(aliasedAttrName))
+			{
+				return default(T);
+			}
+
+			var value = collection[aliasedAttrName];
+
+			//Если значение аттрибута нулевое или не типа AliasedValue - дефолтное значение 
+			if (!(value is AliasedValue))
+			{
+				return default(T);
+			}
+
+			var aliasedValue = ((AliasedValue)value).Value;
+			return (T)aliasedValue;
+		}
 	}
 }
