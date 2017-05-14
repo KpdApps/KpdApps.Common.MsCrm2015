@@ -266,5 +266,10 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 			var aliasedValue = ((AliasedValue)value).Value;
 			return (T)aliasedValue;
 		}
+
+		public static void ClearValue(this AttributeCollection properties, string name)
+		{
+			properties[name] = null;
+		}
 	}
 }
