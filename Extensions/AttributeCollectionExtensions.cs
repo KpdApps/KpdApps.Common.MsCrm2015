@@ -108,6 +108,16 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 			return DateTime.MinValue;
 		}
 
+		public static DateTime? GetNullableDateTime(this AttributeCollection properties, string name)
+		{
+			DateTime date = properties.GetDateTimeValue(name);
+			if (date == DateTime.MinValue)
+			{
+				return null;
+			}
+			return date;
+		}
+
 		public static void SetDateTimeValue(this AttributeCollection properties, string name, DateTime value)
 		{
 			if (properties.Contains(name))
@@ -234,7 +244,7 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 				properties.Add(name, value);
 		}
 
-		public static T GetAliasedValue<T>(this AttributeCollection collection, string aliasedEntityName, string attributeName)
+		public static T GetAliasedValue<T>(this AttributeCollection properties, string aliasedEntityName, string attributeName)
 		{
 			const string aliasedTemplate = "{0}.{1}";
 
@@ -250,12 +260,12 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 
 			var aliasedAttrName = string.Format(aliasedTemplate, aliasedEntityName, attributeName);
 
-			if (!collection.Contains(aliasedAttrName))
+			if (!properties.Contains(aliasedAttrName))
 			{
 				return default(T);
 			}
 
-			var value = collection[aliasedAttrName];
+			var value = properties[aliasedAttrName];
 
 			//Если значение аттрибута нулевое или не типа AliasedValue - дефолтное значение 
 			if (!(value is AliasedValue))
