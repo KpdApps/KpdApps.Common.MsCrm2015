@@ -281,5 +281,10 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 		{
 			properties[name] = null;
 		}
+
+		public static bool ContainsNotNull(this AttributeCollection properties, string name)
+		{
+			return properties.Contains(name) && properties[name] != null;
+		}
 	}
 }

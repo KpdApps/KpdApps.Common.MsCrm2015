@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Globalization;
 using System.IO;
@@ -60,6 +61,28 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 			return result;
 		}
 
+		public static void SetFieldsByMapping(this Entity target, Entity sourceEntity, Dictionary<string, string> mapping)
+		{
+			foreach (var sourceAttrName in mapping.Keys)
+			{
+				object value = null;
+				if (sourceEntity.Attributes.ContainsNotNull(sourceAttrName))
+				{
+					value = sourceEntity.Attributes[sourceAttrName];
+				}
+
+				var targetName = mapping[sourceAttrName];
+				if (target.Attributes.Contains(targetName))
+				{
+					target.Attributes[targetName] = value;
+				}
+				else
+				{
+					target.Attributes.Add(targetName, value);
+				}
+			}
+		}
+
 		/// <summary>
 		/// Check attribute by regular Contains and Value not null.
 		/// </summary>
@@ -68,7 +91,7 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 		/// <returns></returns>
 		public static bool ContainsNotNull(this Entity entity, string attributeName)
 		{
-			return entity.Contains(attributeName) && entity[attributeName] != null;
+			return entity.Attributes.ContainsNotNull(attributeName);
 		}
 
 		/// <summary>
