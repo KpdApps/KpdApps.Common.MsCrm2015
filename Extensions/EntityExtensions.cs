@@ -86,9 +86,9 @@ namespace KpdApps.Common.MsCrm2015.Extensions
         /// <summary>
         ///     Copies all attributes missing in current entity from source.
         /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="source"></param>
-        /// <returns>new instance with all the attributes</returns>
+        /// <param name="entity">Attributes of this entity have priority over source</param>
+        /// <param name="source">Source entity</param>
+        /// <returns>New instance with all the attributes</returns>
         public static Entity MergeIn(this Entity entity, Entity source)
         {
             var merged = source.Clone();
@@ -102,7 +102,7 @@ namespace KpdApps.Common.MsCrm2015.Extensions
         }
 
         /// <summary>
-        /// Check attribute by regular Contains and Value not null.
+        ///     Check attribute by regular Contains and Value not null.
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="attributeName"></param>
@@ -113,11 +113,11 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 		}
 
         /// <summary>
-        /// Checks if entity cointains any of the attributes
+        ///     Checks if entity cointains any of the attributes
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="attributeName"></param>
-        /// <returns></returns>
+        /// <returns>True if countains any</returns>
         public static bool ContainsAny(this Entity entity, params string[] attrNames)
         {
             foreach(var attr in attrNames)
@@ -131,11 +131,11 @@ namespace KpdApps.Common.MsCrm2015.Extensions
         }
 
         /// <summary>
-        /// Checks if entity cointains all the attributes
+        ///     Checks if entity cointains all the attributes
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="attributeName"></param>
-        /// <returns></returns>
+        /// <returns>True if contains all</returns>
         public static bool ContainsAll(this Entity entity, params string[] attrNames)
         {
             foreach (var attr in attrNames)
@@ -149,7 +149,7 @@ namespace KpdApps.Common.MsCrm2015.Extensions
         }
 
         /// <summary>
-        /// Copy attribute value.
+        ///     Copy attribute value.
         /// </summary>
         /// <param name="value"><see cref="OptionSetValue"/>, <see cref="Money"/>, <see cref="EntityReference"/>, <see cref="EntityCollection"/></param>
         /// <returns></returns>
@@ -197,7 +197,7 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 		}
 
 		/// <summary>
-		/// Serialize Entity by DataContractSerializer.
+		///     Serialize Entity by DataContractSerializer.
 		/// </summary>
 		/// <param name="entity">Entity.</param>
 		/// <returns>Serialized string.</returns>
@@ -213,7 +213,7 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 		}
 
 		/// <summary>
-		/// Deserialize Entity by DataContractSerializer.
+		///     Deserialize Entity by DataContractSerializer.
 		/// </summary>
 		/// <param name="entityXml">Serialized string.</param>
 		/// <returns>Entity.</returns>
@@ -225,7 +225,7 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 		}
 
 		/// <summary>
-		/// Create empty Entity (which inherit only parent logical name and identification field)
+		///     Create empty Entity (which inherit only parent logical name and identification field)
 		/// </summary>
 		public static Entity CreateEmpty(this Entity entity)
 		{
