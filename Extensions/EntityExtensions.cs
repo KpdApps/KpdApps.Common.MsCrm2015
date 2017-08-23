@@ -84,6 +84,24 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 		}
 
         /// <summary>
+        ///     Copies all attributes missing in current entity from source.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="source"></param>
+        /// <returns>new instance with all the attributes</returns>
+        public static Entity MergeIn(this Entity entity, Entity source)
+        {
+            var merged = source.Clone();
+            merged.Id = entity.Id;
+
+            foreach (var attr in entity.Attributes)
+            {
+                merged.Attributes[attr.Key] = CloneAttributeValue(attr.Value);
+            }
+            return merged;
+        }
+
+        /// <summary>
         /// Check attribute by regular Contains and Value not null.
         /// </summary>
         /// <param name="entity"></param>
