@@ -23,8 +23,20 @@ namespace KpdApps.Common.MsCrm2015
 				return _service;
 			}
 		}
+        private IOrganizationService _adminService;
+        public virtual IOrganizationService AdminService
+        {
+            get
+            {
+                if (_adminService != null)
+                    return _adminService;
 
-		private ITracingService _tracingService;
+                IOrganizationServiceFactory factory = (IOrganizationServiceFactory)Provider.GetService(typeof(IOrganizationServiceFactory));
+                _adminService = factory.CreateOrganizationService(null);
+                return _adminService;
+            }
+        }
+        private ITracingService _tracingService;
 		public virtual ITracingService TracingService
 		{
 			get
