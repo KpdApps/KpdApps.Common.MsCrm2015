@@ -158,7 +158,12 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 				properties.Add(name, new EntityReference(type, value));
 		}
 
-		public static int GetNumberValue(this AttributeCollection properties, string name)
+        public static void SetLookupValue(this AttributeCollection properties, string name, EntityReference reference)
+        {
+            SetLookupValue(properties, name, reference.LogicalName, reference.Id);
+        }
+
+        public static int GetNumberValue(this AttributeCollection properties, string name)
 		{
 			if (!properties.Contains(name))
 				return 0;
