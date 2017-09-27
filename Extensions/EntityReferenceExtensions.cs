@@ -40,5 +40,20 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 					, entityReference.Id
 					, !columns.Any() ? new ColumnSet(true) : new ColumnSet(columns));
 		}
-	}
+
+        /// <summary>
+        /// Creates new empty entity from Entity Reference
+        /// </summary>
+        /// <param name="entityReference"></param>
+        /// <param name="organizationService"></param>
+        /// <param name="columns"></param>
+        /// <returns></returns>
+        public static Entity ToEntity(this EntityReference entityReference)
+        {
+            var e = new Entity(entityReference.LogicalName);
+            e.Id = entityReference.Id;
+
+            return e;
+        }
+    }
 }
