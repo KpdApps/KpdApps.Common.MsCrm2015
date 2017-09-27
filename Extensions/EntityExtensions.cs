@@ -10,12 +10,12 @@ using Microsoft.Xrm.Sdk;
 namespace KpdApps.Common.MsCrm2015.Extensions
 {
 	/// <summary>
-	/// Extensions for Entity.
+	///     Extensions for Entity.
 	/// </summary>
 	public static class EntityExtensions
 	{
 		/// <summary>
-		/// Copy all attributes (except primary key) to new Entity.
+		///     Copy all attributes (except primary key) to new Entity.
 		/// </summary>
 		public static Entity Clone(this Entity entity)
 		{
@@ -39,7 +39,7 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 		}
 
 		/// <summary>
-		/// Copy selected columns to new Entity.
+		///     Copy selected columns to new Entity.
 		/// </summary>
 		/// <param name="entity">Original Entity.</param>
 		/// <param name="fields">Columns to copy.</param>
@@ -83,23 +83,77 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 			}
 		}
 
-		/// <summary>
-		/// Check attribute by regular Contains and Value not null.
-		/// </summary>
-		/// <param name="entity"></param>
-		/// <param name="attributeName"></param>
-		/// <returns></returns>
-		public static bool ContainsNotNull(this Entity entity, string attributeName)
+        /// <summary>
+        ///     Copies all attributes missing in current entity from source.
+        /// </summary>
+        /// <param name="entity">Attributes of this entity have priority over source</param>
+        /// <param name="source">Source entity</param>
+        /// <returns>New instance with all the attributes</returns>
+        public static Entity MergeIn(this Entity entity, Entity source)
+        {
+            var merged = source.Clone();
+            merged.Id = entity.Id;
+
+            foreach (var attr in entity.Attributes)
+            {
+                merged.Attributes[attr.Key] = CloneAttributeValue(attr.Value);
+            }
+            return merged;
+        }
+
+        /// <summary>
+        ///     Check attribute by regular Contains and Value not null.
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="attributeName"></param>
+        /// <returns></returns>
+        public static bool ContainsNotNull(this Entity entity, string attributeName)
 		{
 			return entity.Attributes.ContainsNotNull(attributeName);
 		}
 
-		/// <summary>
-		/// Copy attribute value.
-		/// </summary>
-		/// <param name="value"><see cref="OptionSetValue"/>, <see cref="Money"/>, <see cref="EntityReference"/>, <see cref="EntityCollection"/></param>
-		/// <returns></returns>
-		private static object CloneAttributeValue(object value)
+        /// <summary>
+        ///     Checks if entity cointains any of the attributes
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="attributeName"></param>
+        /// <returns>True if countains any</returns>
+        public static bool ContainsAny(this Entity entity, params string[] attrNames)
+        {
+            foreach(var attr in attrNames)
+            {
+                if (entity.Contains(attr))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        ///     Checks if entity cointains all the attributes
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="attributeName"></param>
+        /// <returns>True if contains all</returns>
+        public static bool ContainsAll(this Entity entity, params string[] attrNames)
+        {
+            foreach (var attr in attrNames)
+            {
+                if (!entity.Contains(attr))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        /// <summary>
+        ///     Copy attribute value.
+        /// </summary>
+        /// <param name="value"><see cref="OptionSetValue"/>, <see cref="Money"/>, <see cref="EntityReference"/>, <see cref="EntityCollection"/></param>
+        /// <returns></returns>
+        private static object CloneAttributeValue(object value)
 		{
 			object val = value;
 			if (val is OptionSetValue)
@@ -143,7 +197,7 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 		}
 
 		/// <summary>
-		/// Serialize Entity by DataContractSerializer.
+		///     Serialize Entity by DataContractSerializer.
 		/// </summary>
 		/// <param name="entity">Entity.</param>
 		/// <returns>Serialized string.</returns>
@@ -159,7 +213,7 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 		}
 
 		/// <summary>
-		/// Deserialize Entity by DataContractSerializer.
+		///     Deserialize Entity by DataContractSerializer.
 		/// </summary>
 		/// <param name="entityXml">Serialized string.</param>
 		/// <returns>Entity.</returns>
@@ -171,7 +225,7 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 		}
 
 		/// <summary>
-		/// Create empty Entity (which inherit only parent logical name and identification field)
+		///     Create empty Entity (which inherit only parent logical name and identification field)
 		/// </summary>
 		public static Entity CreateEmpty(this Entity entity)
 		{
