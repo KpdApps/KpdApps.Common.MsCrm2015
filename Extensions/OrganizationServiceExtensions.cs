@@ -48,14 +48,26 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 			return organizationService.Retrieve(entityReference.LogicalName, entityReference.Id, new ColumnSet(true));
 		}
 
-		/// <summary>
-		/// Replace for regular Retrieve, return <see cref="Entity"/> with all collumns.
-		/// </summary>
-		/// <param name="organizationService"><see cref="IOrganizationService"/>.</param>
-		/// <param name="source"><see cref="Entity"/></param>
-		/// <param name="referencingAttributeName">Name of attribute of reference to retrieve.</param>
-		/// <returns><see cref="Entity"/></returns>
-		public static Entity Retrieve(this IOrganizationService organizationService, Entity source, string referencingAttributeName)
+        /// <summary>
+        /// Replace for regular Retrieve, return <see cref="Entity"/> with all collumns.
+        /// </summary>
+        /// <param name="organizationService"><see cref="IOrganizationService"/>.</param>
+        /// <param name="entityReference"><see cref="EntityReference"/></param>
+        /// <param name="colse"><see cref="ColumnSet"/></param>
+        /// <returns><see cref="Entity"/></returns>
+        public static Entity Retrieve(this IOrganizationService organizationService, EntityReference entityReference, ColumnSet cols)
+        {
+            return organizationService.Retrieve(entityReference.LogicalName, entityReference.Id, cols);
+        }
+
+        /// <summary>
+        /// Replace for regular Retrieve, return <see cref="Entity"/> with all collumns.
+        /// </summary>
+        /// <param name="organizationService"><see cref="IOrganizationService"/>.</param>
+        /// <param name="source"><see cref="Entity"/></param>
+        /// <param name="referencingAttributeName">Name of attribute of reference to retrieve.</param>
+        /// <returns><see cref="Entity"/></returns>
+        public static Entity Retrieve(this IOrganizationService organizationService, Entity source, string referencingAttributeName)
 		{
 			var reference = source[referencingAttributeName] as EntityReference;
 			if (reference != null)
@@ -81,7 +93,19 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 			return organizationService.Retrieve(entityName, entityId, set);
 		}
 
-		public static SystemServiceSwitcher SwitchToSystem(this IOrganizationService service)
+        /// <summary>
+        /// Replace for regular Retrieve, return <see cref="Entity"/> with all specified collumns.
+        /// </summary>
+        /// <param name="organizationService"><see cref="IOrganizationService"/>.</param>
+        /// <param name="entityRef">Entity reference.</param>
+        /// <param name="attrs">Attributes to select.</param>
+        /// <returns><see cref="Entity"/></returns>
+        public static Entity Retrieve(this IOrganizationService organizationService, EntityReference entityRef, params string[] attrs)
+        {
+            return Retrieve(organizationService, entityRef.LogicalName, entityRef.Id, attrs);
+        }
+
+        public static SystemServiceSwitcher SwitchToSystem(this IOrganizationService service)
 		{
 			return new SystemServiceSwitcher(service);
 		}
@@ -149,5 +173,17 @@ namespace KpdApps.Common.MsCrm2015.Extensions
 
 			service.Execute(request);
 		}
-	}
+
+        /// <summary>
+        /// Execute <see cref="SetStateRequest"/> to set entity state and status codes.
+        /// </summary>
+        /// <param name="service"><see cref="IOrganizationService"/></param>
+        /// <param name="entityRef">Logical name of entity.</param>
+        /// <param name="stateCode">State code</param>
+        /// <param name="statusCode">Status code</param>
+        public static void SetStateDynamic(this IOrganizationService service, EntityReference entityRef, int stateCode, int statusCode)
+        {
+            SetStateDynamic(service, entityRef.LogicalName, entityRef.Id, stateCode, statusCode);
+        }
+    }
 }
