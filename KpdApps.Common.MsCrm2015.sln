@@ -11,6 +11,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{
 		Libraries\Microsoft.Xrm.Sdk.dll = Libraries\Microsoft.Xrm.Sdk.dll
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{AA817390-A5FD-4FC8-ABA7-29251B092FA3}"
+	ProjectSection(SolutionItems) = preProject
+		Solution\[Content_Types].xml = Solution\[Content_Types].xml
+		Solution\customizations.xml = Solution\customizations.xml
+		Solution\solution.xml = Solution\solution.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebResources", "WebResources", "{DDF8FBBE-0B2A-419A-B6CE-5B32F0346510}"
+	ProjectSection(SolutionItems) = preProject
+		Solution\WebResources\kpd_logmessagejsEB2710F2-32D4-E711-80D0-005056B33E0A.js = Solution\WebResources\kpd_logmessagejsEB2710F2-32D4-E711-80D0-005056B33E0A.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +36,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DDF8FBBE-0B2A-419A-B6CE-5B32F0346510} = {AA817390-A5FD-4FC8-ABA7-29251B092FA3}
 	EndGlobalSection
 EndGlobal

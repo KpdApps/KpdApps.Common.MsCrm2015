@@ -1,0 +1,1550 @@
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Entities>
+    <Entity>
+      <Name LocalizedName="Log Message" OriginalName="Log Message">kpd_logmessage</Name>
+      <ObjectTypeCode>10241</ObjectTypeCode>
+      <EntityInfo>
+        <entity Name="kpd_logmessage">
+          <LocalizedNames>
+            <LocalizedName description="Log Message" languagecode="1033" />
+          </LocalizedNames>
+          <LocalizedCollectionNames>
+            <LocalizedCollectionName description="Log Messages" languagecode="1033" />
+          </LocalizedCollectionNames>
+          <Descriptions>
+            <Description description="" languagecode="1033" />
+          </Descriptions>
+          <attributes>
+            <attribute PhysicalName="CreatedBy">
+              <Type>lookup</Type>
+              <Name>createdby</Name>
+              <LogicalName>createdby</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <ReferencedEntityObjectTypeCode>8</ReferencedEntityObjectTypeCode>
+              <LookupStyle>single</LookupStyle>
+              <LookupTypes />
+              <displaynames>
+                <displayname description="Created By" languagecode="1033" />
+                <displayname description="Создано" languagecode="1049" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+                <Description description="Уникальный идентификатор пользователя, создавшего запись." languagecode="1049" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="CreatedOn">
+              <Type>datetime</Type>
+              <Name>createdon</Name>
+              <LogicalName>createdon</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>inactive</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <Format>datetime</Format>
+              <displaynames>
+                <displayname description="Created On" languagecode="1033" />
+                <displayname description="Дата создания" languagecode="1049" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Date and time when the record was created." languagecode="1033" />
+                <Description description="Дата и время создания записи." languagecode="1049" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="CreatedOnBehalfBy">
+              <Type>lookup</Type>
+              <Name>createdonbehalfby</Name>
+              <LogicalName>createdonbehalfby</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <ReferencedEntityObjectTypeCode>8</ReferencedEntityObjectTypeCode>
+              <LookupStyle>single</LookupStyle>
+              <LookupTypes />
+              <displaynames>
+                <displayname description="Created By (Delegate)" languagecode="1033" />
+                <displayname description="Кем создано (делегат)" languagecode="1049" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Unique identifier of the delegate user who created the record." languagecode="1033" />
+                <Description description="Уникальный идентификатор пользователя-делегата, создавшего запись." languagecode="1049" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="ImportSequenceNumber">
+              <Type>int</Type>
+              <Name>importsequencenumber</Name>
+              <LogicalName>importsequencenumber</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind</DisplayMask>
+              <ImeMode>disabled</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <Format></Format>
+              <MinValue>-2147483648</MinValue>
+              <MaxValue>2147483647</MaxValue>
+              <displaynames>
+                <displayname description="Import Sequence Number" languagecode="1033" />
+                <displayname description="Порядковый номер импорта" languagecode="1049" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Sequence number of the import that created this record." languagecode="1033" />
+                <Description description="Порядковый номер импорта, в результате которого была создана эта запись." languagecode="1049" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="kpd_logmessageId">
+              <Type>primarykey</Type>
+              <Name>kpd_logmessageid</Name>
+              <LogicalName>kpd_logmessageid</LogicalName>
+              <RequiredLevel>systemrequired</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>0</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <displaynames>
+                <displayname description="Log Message" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Unique identifier for entity instances" languagecode="1033" />
+                <Description description="Уникальный идентификатор экземпляров сущности" languagecode="1049" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="kpd_message">
+              <Type>ntext</Type>
+              <Name>kpd_message</Name>
+              <LogicalName>kpd_message</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <Format></Format>
+              <MaxLength>1000</MaxLength>
+              <displaynames>
+                <displayname description="Message" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="kpd_messageshort">
+              <Type>nvarchar</Type>
+              <Name>kpd_messageshort</Name>
+              <LogicalName>kpd_messageshort</LogicalName>
+              <RequiredLevel>required</RequiredLevel>
+              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <Format>text</Format>
+              <MaxLength>250</MaxLength>
+              <Length>500</Length>
+              <displaynames>
+                <displayname description="Message Short" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="kpd_objectid">
+              <Type>nvarchar</Type>
+              <Name>kpd_objectid</Name>
+              <LogicalName>kpd_objectid</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <Format>text</Format>
+              <MaxLength>40</MaxLength>
+              <Length>80</Length>
+              <displaynames>
+                <displayname description="Object Id" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="kpd_objectname">
+              <Type>nvarchar</Type>
+              <Name>kpd_objectname</Name>
+              <LogicalName>kpd_objectname</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <Format>text</Format>
+              <MaxLength>250</MaxLength>
+              <Length>500</Length>
+              <displaynames>
+                <displayname description="Object Name" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="kpd_stacktrace">
+              <Type>ntext</Type>
+              <Name>kpd_stacktrace</Name>
+              <LogicalName>kpd_stacktrace</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <Format></Format>
+              <MaxLength>5000</MaxLength>
+              <displaynames>
+                <displayname description="Stack Trace" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="ModifiedBy">
+              <Type>lookup</Type>
+              <Name>modifiedby</Name>
+              <LogicalName>modifiedby</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <ReferencedEntityObjectTypeCode>8</ReferencedEntityObjectTypeCode>
+              <LookupStyle>single</LookupStyle>
+              <LookupTypes />
+              <displaynames>
+                <displayname description="Modified By" languagecode="1033" />
+                <displayname description="Изменено" languagecode="1049" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+                <Description description="Уникальный идентификатор пользователя, изменившего запись." languagecode="1049" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="ModifiedOn">
+              <Type>datetime</Type>
+              <Name>modifiedon</Name>
+              <LogicalName>modifiedon</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>inactive</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <Format>datetime</Format>
+              <displaynames>
+                <displayname description="Modified On" languagecode="1033" />
+                <displayname description="Дата изменения" languagecode="1049" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Date and time when the record was modified." languagecode="1033" />
+                <Description description="Дата и время изменения записи." languagecode="1049" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="ModifiedOnBehalfBy">
+              <Type>lookup</Type>
+              <Name>modifiedonbehalfby</Name>
+              <LogicalName>modifiedonbehalfby</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <ReferencedEntityObjectTypeCode>8</ReferencedEntityObjectTypeCode>
+              <LookupStyle>single</LookupStyle>
+              <LookupTypes />
+              <displaynames>
+                <displayname description="Modified By (Delegate)" languagecode="1033" />
+                <displayname description="Кем изменено (делегат)" languagecode="1049" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Unique identifier of the delegate user who modified the record." languagecode="1033" />
+                <Description description="Уникальный идентификатор пользователя-делегата, изменившего запись." languagecode="1049" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="OrganizationId">
+              <Type>lookup</Type>
+              <Name>organizationid</Name>
+              <LogicalName>organizationid</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <ImeMode>auto</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <ReferencedEntityObjectTypeCode>1019</ReferencedEntityObjectTypeCode>
+              <LookupTypes />
+              <displaynames>
+                <displayname description="Organization Id" languagecode="1033" />
+                <displayname description="Идентификатор организации" languagecode="1049" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Unique identifier for the organization" languagecode="1033" />
+                <Description description="Уникальный идентификатор организации" languagecode="1049" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="OverriddenCreatedOn">
+              <Type>datetime</Type>
+              <Name>overriddencreatedon</Name>
+              <LogicalName>overriddencreatedon</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForGrid</DisplayMask>
+              <ImeMode>inactive</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <Format>date</Format>
+              <displaynames>
+                <displayname description="Record Created On" languagecode="1033" />
+                <displayname description="Дата создания записи" languagecode="1049" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Date and time that the record was migrated." languagecode="1033" />
+                <Description description="Дата и время переноса записи." languagecode="1049" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="statecode">
+              <Type>state</Type>
+              <Name>statecode</Name>
+              <LogicalName>statecode</LogicalName>
+              <RequiredLevel>systemrequired</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <optionset Name="kpd_logmessage_statecode">
+                <OptionSetType>state</OptionSetType>
+                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IsCustomizable>1</IsCustomizable>
+                <displaynames>
+                  <displayname description="Status" languagecode="1033" />
+                  <displayname description="Статус" languagecode="1049" />
+                </displaynames>
+                <Descriptions>
+                  <Description description="Status of the Log Message" languagecode="1033" />
+                  <Description description="Статус Log Message" languagecode="1049" />
+                </Descriptions>
+                <states>
+                  <state value="0" defaultstatus="1" invariantname="Active">
+                    <labels>
+                      <label description="Active" languagecode="1033" />
+                      <label description="Активный" languagecode="1049" />
+                    </labels>
+                  </state>
+                  <state value="1" defaultstatus="2" invariantname="Inactive">
+                    <labels>
+                      <label description="Inactive" languagecode="1033" />
+                      <label description="Неактивные" languagecode="1049" />
+                    </labels>
+                  </state>
+                </states>
+              </optionset>
+              <displaynames>
+                <displayname description="Status" languagecode="1033" />
+                <displayname description="Статус" languagecode="1049" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Status of the Log Message" languagecode="1033" />
+                <Description description="Статус Log Message" languagecode="1049" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="statuscode">
+              <Type>status</Type>
+              <Name>statuscode</Name>
+              <LogicalName>statuscode</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <optionset Name="kpd_logmessage_statuscode">
+                <OptionSetType>status</OptionSetType>
+                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IsCustomizable>1</IsCustomizable>
+                <displaynames>
+                  <displayname description="Status Reason" languagecode="1033" />
+                  <displayname description="Причина состояния" languagecode="1049" />
+                </displaynames>
+                <Descriptions>
+                  <Description description="Reason for the status of the Log Message" languagecode="1033" />
+                  <Description description="Причина состояния Log Message" languagecode="1049" />
+                </Descriptions>
+                <statuses>
+                  <status value="1" state="0">
+                    <labels>
+                      <label description="Active" languagecode="1033" />
+                      <label description="Активный" languagecode="1049" />
+                    </labels>
+                  </status>
+                  <status value="2" state="1">
+                    <labels>
+                      <label description="Inactive" languagecode="1033" />
+                      <label description="Неактивные" languagecode="1049" />
+                    </labels>
+                  </status>
+                </statuses>
+              </optionset>
+              <displaynames>
+                <displayname description="Status Reason" languagecode="1033" />
+                <displayname description="Причина состояния" languagecode="1049" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Reason for the status of the Log Message" languagecode="1033" />
+                <Description description="Причина состояния Log Message" languagecode="1049" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="TimeZoneRuleVersionNumber">
+              <Type>int</Type>
+              <Name>timezoneruleversionnumber</Name>
+              <LogicalName>timezoneruleversionnumber</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <Format></Format>
+              <MinValue>-1</MinValue>
+              <MaxValue>2147483647</MaxValue>
+              <displaynames>
+                <displayname description="Time Zone Rule Version Number" languagecode="1033" />
+                <displayname description="Номер версии правила часового пояса" languagecode="1049" />
+              </displaynames>
+              <Descriptions>
+                <Description description="For internal use only." languagecode="1033" />
+                <Description description="Только для внутреннего использования." languagecode="1049" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="UTCConversionTimeZoneCode">
+              <Type>int</Type>
+              <Name>utcconversiontimezonecode</Name>
+              <LogicalName>utcconversiontimezonecode</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <Format></Format>
+              <MinValue>-1</MinValue>
+              <MaxValue>2147483647</MaxValue>
+              <displaynames>
+                <displayname description="UTC Conversion Time Zone Code" languagecode="1033" />
+                <displayname description="Код часового пояса (преобразование в UTC)" languagecode="1049" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Time zone code that was in use when the record was created." languagecode="1033" />
+                <Description description="Код часового пояса, использовавшийся при создании записи." languagecode="1049" />
+              </Descriptions>
+            </attribute>
+          </attributes>
+          <IsDuplicateCheckSupported>0</IsDuplicateCheckSupported>
+          <IsBusinessProcessEnabled>0</IsBusinessProcessEnabled>
+          <IsRequiredOffline>0</IsRequiredOffline>
+          <IsCollaboration>0</IsCollaboration>
+          <AutoRouteToOwnerQueue>0</AutoRouteToOwnerQueue>
+          <IsConnectionsEnabled>0</IsConnectionsEnabled>
+          <IsDocumentManagementEnabled>0</IsDocumentManagementEnabled>
+          <OwnershipTypeMask>OrgOwned</OwnershipTypeMask>
+          <IsAuditEnabled>0</IsAuditEnabled>
+          <IsActivity>0</IsActivity>
+          <ActivityTypeMask></ActivityTypeMask>
+          <IsActivityParty>0</IsActivityParty>
+          <IsReplicated>0</IsReplicated>
+          <IsReplicationUserFiltered>0</IsReplicationUserFiltered>
+          <IsMailMergeEnabled>0</IsMailMergeEnabled>
+          <IsVisibleInMobile>0</IsVisibleInMobile>
+          <IsVisibleInMobileClient>0</IsVisibleInMobileClient>
+          <IsReadOnlyInMobileClient>0</IsReadOnlyInMobileClient>
+          <IsMapiGridEnabled>1</IsMapiGridEnabled>
+          <IsReadingPaneEnabled>0</IsReadingPaneEnabled>
+          <IsQuickCreateEnabled>0</IsQuickCreateEnabled>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <IsMappable>1</IsMappable>
+          <CanModifyAuditSettings>1</CanModifyAuditSettings>
+          <CanModifyMobileVisibility>1</CanModifyMobileVisibility>
+          <CanModifyMobileClientVisibility>1</CanModifyMobileClientVisibility>
+          <CanModifyMobileClientReadOnly>1</CanModifyMobileClientReadOnly>
+          <CanModifyConnectionSettings>1</CanModifyConnectionSettings>
+          <CanModifyDuplicateDetectionSettings>1</CanModifyDuplicateDetectionSettings>
+          <CanModifyMailMergeSettings>1</CanModifyMailMergeSettings>
+          <CanModifyQueueSettings>1</CanModifyQueueSettings>
+          <CanCreateAttributes>1</CanCreateAttributes>
+          <CanCreateForms>1</CanCreateForms>
+          <CanCreateCharts>1</CanCreateCharts>
+          <CanCreateViews>1</CanCreateViews>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <EnforceStateTransitions>0</EnforceStateTransitions>
+          <CanChangeHierarchicalRelationship>1</CanChangeHierarchicalRelationship>
+          <EntityHelpUrlEnabled>0</EntityHelpUrlEnabled>
+        </entity>
+      </EntityInfo>
+      <FormXml>
+        <forms type="main">
+          <systemform>
+            <formid>{e7004a72-fb69-425d-8ba7-46f73f446e10}</formid>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <FormPresentation>1</FormPresentation>
+            <FormActivationState>1</FormActivationState>
+            <form>
+              <tabs>
+                <tab verticallayout="true" id="{3c7bcaf1-c3a7-4634-b823-aee1f107a2d3}" IsUserDefined="1">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                    <label description="Общие сведения" languagecode="1049" />
+                  </labels>
+                  <columns>
+                    <column width="100%">
+                      <sections>
+                        <section showlabel="false" showbar="false" IsUserDefined="0" id="{5d2a21bc-de98-4d2a-bd68-729df2dae4a3}" name="{5d2a21bc-de98-4d2a-bd68-729df2dae4a3}" columns="11" locklevel="0" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
+                          <labels>
+                            <label description="General" languagecode="1033" />
+                            <label description="Общие сведения" languagecode="1049" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{3c13ca00-278a-4289-bf65-0ee2803aa1f8}" showlabel="true" locklevel="0" colspan="2">
+                                <labels>
+                                  <label description="Message Short" languagecode="1033" />
+                                </labels>
+                                <control id="kpd_messageshort" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="kpd_messageshort" disabled="true" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{63d78d16-2e85-02ca-d831-57ca80732e63}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="Object Id" languagecode="1033" />
+                                </labels>
+                                <control id="kpd_objectid" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="kpd_objectid" disabled="true" />
+                              </cell>
+                              <cell id="{09bc05a7-9cb5-9d85-a531-d17645448b44}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="Inner Log Message" languagecode="1033" />
+                                </labels>
+                                <control id="kpd_innerlogmessageid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="kpd_innerlogmessageid" disabled="true">
+                                  <parameters>
+                                    <AutoResolve>false</AutoResolve>
+                                    <DisableMru>true</DisableMru>
+                                    <DisableQuickFind>false</DisableQuickFind>
+                                    <DisableViewPicker>false</DisableViewPicker>
+                                    <DefaultViewId>{6F6F717D-109B-4CC9-A06C-4BBC906339FB}</DefaultViewId>
+                                    <AllowFilterOff>false</AllowFilterOff>
+                                  </parameters>
+                                </control>
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{8b392eb9-897e-1297-2d95-a327b5b5059e}" showlabel="true" locklevel="0" visible="false">
+                                <labels>
+                                  <label description="Object Name" languagecode="1033" />
+                                </labels>
+                                <control id="kpd_objectname" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="kpd_objectname" disabled="true" />
+                              </cell>
+                              <cell id="{25076c7c-75c1-ce03-9d63-2703c3263bb6}" showlabel="false">
+                                <labels>
+                                  <label description="" languagecode="1033" />
+                                </labels>
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{b408864a-21dd-00b8-2803-5cc0257c3d5c}" showlabel="true" locklevel="0" colspan="2" rowspan="2">
+                                <labels>
+                                  <label description="Message" languagecode="1033" />
+                                </labels>
+                                <control id="kpd_message" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="kpd_message" disabled="true" />
+                              </cell>
+                            </row>
+                            <row />
+                            <row>
+                              <cell id="{00a2b6a6-a1cd-b4c4-25ed-c70e7d71e00c}" showlabel="true" locklevel="0" colspan="2" rowspan="10">
+                                <labels>
+                                  <label description="Stack Trace" languagecode="1033" />
+                                </labels>
+                                <control id="kpd_stacktrace" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="kpd_stacktrace" disabled="true" />
+                              </cell>
+                            </row>
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                  </columns>
+                </tab>
+              </tabs>
+              <header id="{7a42c178-330e-4060-bb43-ca84211fb7bc}" columns="111">
+                <rows>
+                  <row>
+                    <cell id="{248e748a-ff28-4771-aa71-8124e0328bfe}">
+                      <labels>
+                        <label description="" languagecode="1033" />
+                      </labels>
+                    </cell>
+                    <cell id="{bdd72b46-93cb-361e-9ae1-478cb9cc43b4}" showlabel="true" locklevel="0">
+                      <labels>
+                        <label description="Created On" languagecode="1033" />
+                        <label description="Дата создания" languagecode="1049" />
+                      </labels>
+                      <control id="header_createdon" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                    </cell>
+                    <cell id="{553c667c-3a25-5b07-450c-c40c8ca2a571}" showlabel="true" locklevel="0">
+                      <labels>
+                        <label description="Created By" languagecode="1033" />
+                        <label description="Создано" languagecode="1049" />
+                      </labels>
+                      <control id="header_createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+                    </cell>
+                  </row>
+                </rows>
+              </header>
+              <Navigation>
+                <NavBar></NavBar>
+                <NavBarAreas>
+                  <NavBarArea Id="Info">
+                    <Titles>
+                      <Title LCID="1033" Text="Common" />
+                    </Titles>
+                  </NavBarArea>
+                  <NavBarArea Id="Sales">
+                    <Titles>
+                      <Title LCID="1033" Text="Sales" />
+                    </Titles>
+                  </NavBarArea>
+                  <NavBarArea Id="Service">
+                    <Titles>
+                      <Title LCID="1033" Text="Service" />
+                    </Titles>
+                  </NavBarArea>
+                  <NavBarArea Id="Marketing">
+                    <Titles>
+                      <Title LCID="1033" Text="Marketing" />
+                    </Titles>
+                  </NavBarArea>
+                  <NavBarArea Id="ProcessCenter">
+                    <Titles>
+                      <Title LCID="1033" Text="Process Sessions" />
+                    </Titles>
+                  </NavBarArea>
+                </NavBarAreas>
+              </Navigation>
+            </form>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>1</CanBeDeleted>
+            <LocalizedNames>
+              <LocalizedName description="Сведения" languagecode="1033" />
+            </LocalizedNames>
+            <Descriptions>
+              <Description description="Форма для этой сущности." languagecode="1033" />
+            </Descriptions>
+          </systemform>
+        </forms>
+        <forms type="mobile">
+          <systemform>
+            <formid>{5e7c7b0d-6592-40a1-8998-9885244af27f}</formid>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <FormPresentation>0</FormPresentation>
+            <FormActivationState>1</FormActivationState>
+            <form>
+              <tabs>
+                <tab name="general" verticallayout="true" id="{9fac305f-b9b9-4eef-a8c9-dd96a6af38f1}" IsUserDefined="0">
+                  <labels>
+                    <label description="" languagecode="1033" />
+                  </labels>
+                  <columns>
+                    <column width="100%">
+                      <sections>
+                        <section name="account information" showlabel="false" showbar="false" id="{0066f9e1-ee96-4d97-9fb6-bf7a123f6751}" IsUserDefined="0">
+                          <labels>
+                            <label description="" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{6409d904-d154-45c7-b3c9-08ca41f17f7d}">
+                                <labels>
+                                  <label description="Message Short" languagecode="1033" />
+                                </labels>
+                                <control id="kpd_messageshort" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="kpd_messageshort" disabled="false" />
+                              </cell>
+                              <cell id="{c1bed917-4c00-41a2-b330-db18ec8e8d26}">
+                                <labels>
+                                  <label description="Status" languagecode="1033" />
+                                  <label description="Статус" languagecode="1049" />
+                                </labels>
+                                <control id="statecode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="false" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                  </columns>
+                </tab>
+              </tabs>
+            </form>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>1</CanBeDeleted>
+            <LocalizedNames>
+              <LocalizedName description="Сведения" languagecode="1033" />
+            </LocalizedNames>
+            <Descriptions>
+              <Description description="Эта форма отображается в приложении CRM Mobile." languagecode="1033" />
+            </Descriptions>
+          </systemform>
+        </forms>
+        <forms type="quick">
+          <systemform>
+            <formid>{694ea2a4-eb1f-4db2-b64d-1edf1167b3e4}</formid>
+            <IntroducedVersion>1.0.55.0</IntroducedVersion>
+            <FormPresentation>1</FormPresentation>
+            <FormActivationState>1</FormActivationState>
+            <form>
+              <tabs>
+                <tab id="{37bd1ff1-25d9-40a3-82b8-a210ac56f9fc}" name="tab_1" showlabel="false">
+                  <labels>
+                    <label description="Tab" languagecode="1033" />
+                  </labels>
+                  <columns>
+                    <column width="100%">
+                      <sections>
+                        <section id="{30919ba8-fc7d-4d00-922f-aafe9a9680fb}" name="tab_1_column_1_section_1" columns="1" showlabel="false" showbar="false" IsUserDefined="0">
+                          <labels>
+                            <label description="section" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{7ca28328-7742-ad53-c4b5-29a74b61ab8c}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="Message" languagecode="1033" />
+                                </labels>
+                                <control id="kpd_message" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="kpd_message" disabled="true" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{80ac279b-e8ea-c131-e907-bc5bd0735e9e}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="Stack Trace" languagecode="1033" />
+                                </labels>
+                                <control id="kpd_stacktrace" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="kpd_stacktrace" disabled="true" />
+                              </cell>
+                            </row>
+                            <row>
+                              <cell id="{b4bebca8-4565-6ccc-5b0b-ea607e38453d}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="Inner Log Message" languagecode="1033" />
+                                </labels>
+                                <control id="kpd_innerlogmessageid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="kpd_innerlogmessageid" disabled="true">
+                                  <parameters>
+                                    <AutoResolve>false</AutoResolve>
+                                    <DisableMru>true</DisableMru>
+                                    <DisableQuickFind>false</DisableQuickFind>
+                                    <DisableViewPicker>false</DisableViewPicker>
+                                    <DefaultViewId>{6F6F717D-109B-4CC9-A06C-4BBC906339FB}</DefaultViewId>
+                                    <AllowFilterOff>false</AllowFilterOff>
+                                  </parameters>
+                                </control>
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                  </columns>
+                </tab>
+              </tabs>
+              <DisplayConditions Order="1">
+                <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+                <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+              </DisplayConditions>
+            </form>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>1</CanBeDeleted>
+            <LocalizedNames>
+              <LocalizedName description="New Form" languagecode="1033" />
+            </LocalizedNames>
+          </systemform>
+        </forms>
+      </FormXml>
+      <SavedQueries>
+        <savedqueries>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>0</CanBeDeleted>
+            <isquickfindquery>0</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>1</isdefault>
+            <returnedtypecode>10241</returnedtypecode>
+            <savedqueryid>{f04479a2-3aa7-4ed6-bb6f-6c371fc33dfc}</savedqueryid>
+            <layoutxml>
+              <grid name="resultset" object="10241" jump="kpd_messageshort" select="1" icon="1" preview="1">
+                <row name="result" id="kpd_logmessageid">
+                  <cell name="kpd_messageshort" width="300" />
+                  <cell name="kpd_innerlogmessageid" width="125" />
+                  <cell name="createdon" width="125" />
+                </row>
+              </grid>
+            </layoutxml>
+            <querytype>0</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical">
+                <entity name="kpd_logmessage">
+                  <attribute name="kpd_messageshort" />
+                  <attribute name="createdon" />
+                  <order attribute="createdon" descending="true" />
+                  <filter type="and">
+                    <condition attribute="statecode" operator="eq" value="0" />
+                  </filter>
+                  <attribute name="kpd_innerlogmessageid" />
+                  <attribute name="kpd_logmessageid" />
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Active Log Messages" languagecode="1033" />
+            </LocalizedNames>
+          </savedquery>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>0</CanBeDeleted>
+            <isquickfindquery>0</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>0</isdefault>
+            <returnedtypecode>10241</returnedtypecode>
+            <savedqueryid>{5fa4f51d-224b-4265-89bb-25d7d0aad25a}</savedqueryid>
+            <layoutxml>
+              <grid name="resultset" object="10241" jump="kpd_messageshort" select="1" icon="1" preview="1">
+                <row name="result" id="kpd_logmessageid">
+                  <cell name="kpd_messageshort" width="300" />
+                  <cell name="createdon" width="125" />
+                </row>
+              </grid>
+            </layoutxml>
+            <querytype>0</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical">
+                <entity name="kpd_logmessage">
+                  <attribute name="kpd_logmessageid" />
+                  <attribute name="kpd_messageshort" />
+                  <attribute name="createdon" />
+                  <order attribute="kpd_messageshort" descending="false" />
+                  <filter type="and">
+                    <condition attribute="statecode" operator="eq" value="1" />
+                  </filter>
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Inactive Log Messages" languagecode="1033" />
+            </LocalizedNames>
+          </savedquery>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>0</CanBeDeleted>
+            <isquickfindquery>0</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>1</isdefault>
+            <returnedtypecode>10241</returnedtypecode>
+            <savedqueryid>{6162ff5c-5921-4c06-a4e8-f782d5bfd862}</savedqueryid>
+            <layoutxml>
+              <grid name="resultset" object="10241" jump="kpd_messageshort" select="1" icon="1" preview="1">
+                <row name="result" id="kpd_logmessageid">
+                  <cell name="kpd_messageshort" width="300" />
+                  <cell name="createdon" width="125" />
+                </row>
+              </grid>
+            </layoutxml>
+            <querytype>1</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical">
+                <entity name="kpd_logmessage">
+                  <attribute name="kpd_logmessageid" />
+                  <attribute name="kpd_messageshort" />
+                  <attribute name="createdon" />
+                  <order attribute="kpd_messageshort" descending="false" />
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Log Message Advanced Find View" languagecode="1033" />
+            </LocalizedNames>
+          </savedquery>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>0</CanBeDeleted>
+            <isquickfindquery>0</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>1</isdefault>
+            <returnedtypecode>10241</returnedtypecode>
+            <savedqueryid>{01ddaab2-68d9-4e0e-8af5-01fe8ee362de}</savedqueryid>
+            <layoutxml>
+              <grid name="" object="10241" jump="kpd_messageshort" select="1" icon="1" preview="1">
+                <row name="kpd_logmessage" id="kpd_logmessageid">
+                  <cell name="kpd_messageshort" width="300" />
+                  <cell name="createdon" width="125" />
+                </row>
+              </grid>
+            </layoutxml>
+            <querytype>2</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical">
+                <entity name="kpd_logmessage">
+                  <attribute name="kpd_logmessageid" />
+                  <attribute name="kpd_messageshort" />
+                  <attribute name="createdon" />
+                  <order attribute="kpd_messageshort" descending="false" />
+                  <filter type="and">
+                    <condition attribute="statecode" operator="eq" value="0" />
+                  </filter>
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Log Message Associated View" languagecode="1033" />
+            </LocalizedNames>
+          </savedquery>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>0</CanBeDeleted>
+            <isquickfindquery>0</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>1</isdefault>
+            <returnedtypecode>10241</returnedtypecode>
+            <savedqueryid>{6f6f717d-109b-4cc9-a06c-4bbc906339fb}</savedqueryid>
+            <layoutxml>
+              <grid name="" object="10241" jump="kpd_messageshort" select="1" icon="1" preview="0">
+                <row name="kpd_logmessage" id="kpd_logmessageid">
+                  <cell name="kpd_messageshort" width="300" />
+                  <cell name="createdon" width="125" />
+                </row>
+              </grid>
+            </layoutxml>
+            <querytype>64</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical">
+                <entity name="kpd_logmessage">
+                  <attribute name="kpd_logmessageid" />
+                  <attribute name="kpd_messageshort" />
+                  <attribute name="createdon" />
+                  <filter type="and">
+                    <condition attribute="statecode" operator="eq" value="0" />
+                  </filter>
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Log Message Lookup View" languagecode="1033" />
+            </LocalizedNames>
+          </savedquery>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>1</CanBeDeleted>
+            <isquickfindquery>0</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>1</isdefault>
+            <returnedtypecode>10241</returnedtypecode>
+            <savedqueryid>{f6224d00-ffd3-e711-80d0-005056b33e0a}</savedqueryid>
+            <querytype>8192</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical" output-format="xml-platform">
+                <entity name="kpd_logmessage">
+                  <attribute name="kpd_logmessageid" />
+                  <filter type="and">
+                    <condition attribute="statecode" operator="eq" value="0" />
+                  </filter>
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Log Messages" languagecode="1033" />
+            </LocalizedNames>
+          </savedquery>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>0</CanBeDeleted>
+            <isquickfindquery>1</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>1</isdefault>
+            <returnedtypecode>10241</returnedtypecode>
+            <savedqueryid>{9d017219-3441-4ed4-bfe6-3fcedccfe65e}</savedqueryid>
+            <layoutxml>
+              <grid name="resultset" object="10241" jump="kpd_messageshort" select="1" icon="1" preview="1">
+                <row name="result" id="kpd_logmessageid">
+                  <cell name="kpd_messageshort" width="300" />
+                  <cell name="createdon" width="125" />
+                </row>
+              </grid>
+            </layoutxml>
+            <querytype>4</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical">
+                <entity name="kpd_logmessage">
+                  <attribute name="kpd_logmessageid" />
+                  <attribute name="kpd_messageshort" />
+                  <attribute name="createdon" />
+                  <order attribute="kpd_messageshort" descending="false" />
+                  <filter type="and">
+                    <condition attribute="statecode" operator="eq" value="0" />
+                  </filter>
+                  <filter type="or" isquickfindfields="1">
+                    <condition attribute="kpd_messageshort" operator="like" value="{0}" />
+                  </filter>
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Quick Find Active Log Messages" languagecode="1033" />
+            </LocalizedNames>
+          </savedquery>
+        </savedqueries>
+      </SavedQueries>
+      <RibbonDiffXml>
+        <CustomActions />
+        <Templates>
+          <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+        </Templates>
+        <CommandDefinitions />
+        <RuleDefinitions>
+          <TabDisplayRules />
+          <DisplayRules />
+          <EnableRules />
+        </RuleDefinitions>
+        <LocLabels />
+      </RibbonDiffXml>
+      <HierarchyRules>
+        <HierarchyRule>
+          <HierarchyRuleID>{40df628a-32d4-e711-80d0-005056b33e0a}</HierarchyRuleID>
+          <PrimaryEntityFormID>{694ea2a4-eb1f-4db2-b64d-1edf1167b3e4}</PrimaryEntityFormID>
+          <PrimaryEntityLogicalName>kpd_logmessage</PrimaryEntityLogicalName>
+          <ShowDisabled>1</ShowDisabled>
+          <IntroducedVersion>1.0.55.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <LocalizedNames>
+            <LocalizedName description="kpd_logmaggare_hierarchy" languagecode="1033" />
+          </LocalizedNames>
+        </HierarchyRule>
+      </HierarchyRules>
+    </Entity>
+  </Entities>
+  <Roles></Roles>
+  <Workflows></Workflows>
+  <FieldSecurityProfiles></FieldSecurityProfiles>
+  <Templates />
+  <EntityMaps>
+    <EntityMap>
+      <EntitySource>kpd_logmessage</EntitySource>
+      <EntityTarget>kpd_logmessage</EntityTarget>
+      <AttributeMaps />
+    </EntityMap>
+  </EntityMaps>
+  <EntityRelationships>
+    <EntityRelationship Name="kpd_kpd_logmessage_kpd_logmessage">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsHierarchical>1</IsHierarchical>
+      <ReferencingEntityName>kpd_logmessage</ReferencingEntityName>
+      <ReferencedEntityName>kpd_logmessage</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>Restrict</CascadeDelete>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
+      <ReferencingAttributeName>kpd_innerlogmessageid</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="Unique identifier for Log Message associated with Log Message." languagecode="1033" />
+        </Descriptions>
+      </RelationshipDescription>
+      <field name="kpd_innerlogmessageid" requiredlevel="none" imemode="auto" lookupstyle="single" lookupbrowse="0" format="">
+        <IsCustomizable>1</IsCustomizable>
+        <IsRenameable>1</IsRenameable>
+        <CanModifySearchSettings>1</CanModifySearchSettings>
+        <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+        <IsSecured>0</IsSecured>
+        <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+        <IsAuditEnabled>0</IsAuditEnabled>
+        <displaynames>
+          <displayname description="Inner Log Message" languagecode="1033" />
+        </displaynames>
+      </field>
+      <EntityRelationshipRoles>
+        <EntityRelationshipRole>
+          <NavPaneDisplayOption>UseCollectionName</NavPaneDisplayOption>
+          <NavPaneArea>Details</NavPaneArea>
+          <NavPaneOrder>10000</NavPaneOrder>
+          <CustomLabels>
+            <CustomLabel description="" languagecode="1033" />
+          </CustomLabels>
+        </EntityRelationshipRole>
+      </EntityRelationshipRoles>
+    </EntityRelationship>
+    <EntityRelationship Name="kpd_logmessage_AsyncOperations">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsHierarchical>0</IsHierarchical>
+      <ReferencingEntityName>AsyncOperation</ReferencingEntityName>
+      <ReferencedEntityName>kpd_logmessage</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <ReferencingAttributeName>RegardingObjectId</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="Unique identifier of the object with which the system job is associated." languagecode="1033" />
+          <Description description="Уникальный идентификатор объекта, с которым связано это системное задание." languagecode="1049" />
+        </Descriptions>
+      </RelationshipDescription>
+      <field name="regardingobjectid" requiredlevel="none" imemode="auto" lookupstyle="single" lookupbrowse="0" format="regarding">
+        <IsSecured>0</IsSecured>
+        <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+        <IsAuditEnabled>1</IsAuditEnabled>
+        <displaynames>
+          <displayname description="Regarding" languagecode="1033" />
+          <displayname description="В отношении" languagecode="1049" />
+        </displaynames>
+      </field>
+    </EntityRelationship>
+    <EntityRelationship Name="kpd_logmessage_BulkDeleteFailures">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsHierarchical>0</IsHierarchical>
+      <ReferencingEntityName>BulkDeleteFailure</ReferencingEntityName>
+      <ReferencedEntityName>kpd_logmessage</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>Cascade</CascadeDelete>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <ReferencingAttributeName>RegardingObjectId</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="Unique identifier of the record that can not be deleted." languagecode="1033" />
+          <Description description="Уникальный идентификатор записи, которая не может быть удалена." languagecode="1049" />
+        </Descriptions>
+      </RelationshipDescription>
+      <field name="regardingobjectid" requiredlevel="none" imemode="auto" lookupstyle="single" lookupbrowse="0" format="regarding">
+        <IsSecured>0</IsSecured>
+        <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+        <IsAuditEnabled>1</IsAuditEnabled>
+        <displaynames>
+          <displayname description="Имя" languagecode="1049" />
+          <displayname description="Name" languagecode="1033" />
+        </displaynames>
+      </field>
+    </EntityRelationship>
+    <EntityRelationship Name="kpd_logmessage_PrincipalObjectAttributeAccesses">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsHierarchical>0</IsHierarchical>
+      <ReferencingEntityName>PrincipalObjectAttributeAccess</ReferencingEntityName>
+      <ReferencedEntityName>kpd_logmessage</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>Cascade</CascadeDelete>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <ReferencingAttributeName>ObjectId</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="Unique identifier of the entity instance with shared secured field" languagecode="1033" />
+          <Description description="Уникальный идентификатор экземпляра сущности, содержащего общее защищенное поле." languagecode="1049" />
+        </Descriptions>
+      </RelationshipDescription>
+      <field name="objectid" requiredlevel="systemrequired" imemode="auto" lookupstyle="single" lookupbrowse="0" format="regarding">
+        <IsSecured>0</IsSecured>
+        <DisplayMask>ValidForForm|ValidForGrid</DisplayMask>
+        <IsAuditEnabled>1</IsAuditEnabled>
+        <displaynames>
+          <displayname description="Entity instance" languagecode="1033" />
+          <displayname description="Экземпляр сущности" languagecode="1049" />
+        </displaynames>
+      </field>
+    </EntityRelationship>
+    <EntityRelationship Name="kpd_logmessage_ProcessSession">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsHierarchical>0</IsHierarchical>
+      <ReferencingEntityName>ProcessSession</ReferencingEntityName>
+      <ReferencedEntityName>kpd_logmessage</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <ReferencingAttributeName>RegardingObjectId</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="Unique identifier of the object with which the dialog session is associated." languagecode="1033" />
+          <Description description="Уникальный идентификатор объекта, с которым связан этот сеанс диалогового окна." languagecode="1049" />
+        </Descriptions>
+      </RelationshipDescription>
+      <field name="regardingobjectid" requiredlevel="none" imemode="auto" lookupstyle="single" lookupbrowse="0" format="regarding">
+        <IsSecured>0</IsSecured>
+        <DisplayMask>ValidForAdvancedFind|ValidForGrid</DisplayMask>
+        <IsAuditEnabled>0</IsAuditEnabled>
+        <displaynames>
+          <displayname description="Regarding" languagecode="1033" />
+          <displayname description="В отношении" languagecode="1049" />
+        </displaynames>
+      </field>
+    </EntityRelationship>
+    <EntityRelationship Name="kpd_logmessage_UserEntityInstanceDatas">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsHierarchical>0</IsHierarchical>
+      <ReferencingEntityName>UserEntityInstanceData</ReferencingEntityName>
+      <ReferencedEntityName>kpd_logmessage</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>Cascade</CascadeDelete>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <ReferencingAttributeName>ObjectId</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="Уникальный идентификатор исходной записи." languagecode="1049" />
+          <Description description="Unique identifier of the source record." languagecode="1033" />
+        </Descriptions>
+      </RelationshipDescription>
+      <field name="objectid" requiredlevel="systemrequired" imemode="auto" lookupstyle="single" lookupbrowse="0" format="">
+        <IsSecured>0</IsSecured>
+        <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+        <IsAuditEnabled>1</IsAuditEnabled>
+        <displaynames>
+          <displayname description="Object Id" languagecode="1033" />
+          <displayname description="Код объекта" languagecode="1049" />
+        </displaynames>
+      </field>
+    </EntityRelationship>
+    <EntityRelationship Name="lk_kpd_logmessage_createdby">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsHierarchical>0</IsHierarchical>
+      <ReferencingEntityName>kpd_logmessage</ReferencingEntityName>
+      <ReferencedEntityName>SystemUser</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+          <Description description="Уникальный идентификатор пользователя, создавшего запись." languagecode="1049" />
+        </Descriptions>
+      </RelationshipDescription>
+      <field name="createdby" requiredlevel="none" imemode="auto" lookupstyle="single" lookupbrowse="0" format="">
+        <IsCustomizable>1</IsCustomizable>
+        <IsRenameable>1</IsRenameable>
+        <CanModifySearchSettings>1</CanModifySearchSettings>
+        <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+        <IsSecured>0</IsSecured>
+        <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+        <IsAuditEnabled>0</IsAuditEnabled>
+        <displaynames>
+          <displayname description="Created By" languagecode="1033" />
+          <displayname description="Создано" languagecode="1049" />
+        </displaynames>
+      </field>
+    </EntityRelationship>
+    <EntityRelationship Name="lk_kpd_logmessage_modifiedby">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsHierarchical>0</IsHierarchical>
+      <ReferencingEntityName>kpd_logmessage</ReferencingEntityName>
+      <ReferencedEntityName>SystemUser</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+          <Description description="Уникальный идентификатор пользователя, изменившего запись." languagecode="1049" />
+        </Descriptions>
+      </RelationshipDescription>
+      <field name="modifiedby" requiredlevel="none" imemode="auto" lookupstyle="single" lookupbrowse="0" format="">
+        <IsCustomizable>1</IsCustomizable>
+        <IsRenameable>1</IsRenameable>
+        <CanModifySearchSettings>1</CanModifySearchSettings>
+        <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+        <IsSecured>0</IsSecured>
+        <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+        <IsAuditEnabled>0</IsAuditEnabled>
+        <displaynames>
+          <displayname description="Modified By" languagecode="1033" />
+          <displayname description="Изменено" languagecode="1049" />
+        </displaynames>
+      </field>
+    </EntityRelationship>
+    <EntityRelationship Name="organization_kpd_logmessage">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsHierarchical>0</IsHierarchical>
+      <ReferencingEntityName>kpd_logmessage</ReferencingEntityName>
+      <ReferencedEntityName>Organization</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <ReferencingAttributeName>OrganizationId</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="Unique identifier for the organization" languagecode="1033" />
+          <Description description="Уникальный идентификатор организации" languagecode="1049" />
+        </Descriptions>
+      </RelationshipDescription>
+      <field name="organizationid" requiredlevel="none" imemode="auto" format="">
+        <IsCustomizable>1</IsCustomizable>
+        <IsRenameable>1</IsRenameable>
+        <CanModifySearchSettings>1</CanModifySearchSettings>
+        <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+        <IsSecured>0</IsSecured>
+        <IsAuditEnabled>1</IsAuditEnabled>
+        <displaynames>
+          <displayname description="Organization Id" languagecode="1033" />
+          <displayname description="Идентификатор организации" languagecode="1049" />
+        </displaynames>
+      </field>
+    </EntityRelationship>
+  </EntityRelationships>
+  <OrganizationSettings />
+  <optionsets />
+  <WebResources>
+    <WebResource>
+      <WebResourceId>{eb2710f2-32d4-e711-80d0-005056b33e0a}</WebResourceId>
+      <Name>kpd_logmessage.js</Name>
+      <LanguageCode>1033</LanguageCode>
+      <WebResourceType>3</WebResourceType>
+      <IntroducedVersion>1.0.55.0</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/kpd_logmessagejsEB2710F2-32D4-E711-80D0-005056B33E0A</FileName>
+    </WebResource>
+  </WebResources>
+  <Languages>
+    <Language>1033</Language>
+    <Language>1049</Language>
+  </Languages>
+</ImportExportXml>

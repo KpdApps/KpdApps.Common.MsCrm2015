@@ -41,6 +41,7 @@ namespace KpdApps.Common.MsCrm2015
             }
             catch (Exception ex)
             {
+                State?.Log(ex);
                 State?.TracingService.TraceError(ex);
                 throw;
             }
