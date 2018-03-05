@@ -39,10 +39,6 @@
     <AssemblyOriginatorKeyFile>KpdApps.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="KpdApps.Common, Version=1.0.16.0, Culture=neutral, PublicKeyToken=895cd312e69c2f16, processorArchitecture=MSIL">
-      <HintPath>packages\KpdApps.Common.1.0.16\lib\net40\KpdApps.Common.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.Crm.Sdk.Proxy">
       <HintPath>Libraries\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
     </Reference>
@@ -66,7 +62,6 @@
   <ItemGroup>
     <Compile Include="BasePlugin.cs" />
     <Compile Include="BasePluginAction.cs" />
-    <Compile Include="CrmOrganizationServiceProxy.cs" />
     <Compile Include="Extensions\AttributeCollectionExtensions.cs" />
     <Compile Include="Extensions\EntityExtensions.cs" />
     <Compile Include="Extensions\EntityReferenceExtensions.cs" />
