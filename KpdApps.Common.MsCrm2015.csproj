@@ -70,8 +70,11 @@
     <Compile Include="Extensions\SystemServiceSwitcher.cs" />
     <Compile Include="Extensions\TracingServiceExtensions.cs" />
     <Compile Include="Helpers\CrmMetadataHelper.cs" />
+    <Compile Include="MessageParams.cs" />
     <Compile Include="PluginState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TargetEntityType.cs" />
+    <Compile Include="TargetTypes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="KpdApps.snk" />

@@ -3,7 +3,7 @@ using Microsoft.Xrm.Sdk;
 
 namespace KpdApps.Common.MsCrm2015
 {
-    public class BasePluginAction
+    public class BasePluginAction : IPlugin
     {
         public PluginState State { get; set; }
 
@@ -11,14 +11,24 @@ namespace KpdApps.Common.MsCrm2015
 
         public IOrganizationService AdminService => State.AdminService;
 
-        public BasePluginAction(PluginState state)
+        private int _order;
+        public int Order => _order;
+
+        public BasePluginAction(PluginState state, int order)
         {
             State = state;
+            _order = order;
         }
 
         public virtual void Execute()
         {
             throw new NotImplementedException();
+        }
+
+        public void Execute(IServiceProvider serviceProvider)
+        {
+            State = new PluginState(serviceProvider);
+            Execute();
         }
     }
 }
