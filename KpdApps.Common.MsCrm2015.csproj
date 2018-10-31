@@ -74,6 +74,7 @@
     <Compile Include="Extensions\OrganizationServiceExtensions.cs" />
     <Compile Include="Extensions\SystemServiceSwitcher.cs" />
     <Compile Include="Extensions\TracingServiceExtensions.cs" />
+    <Compile Include="Helpers\CrmFieldHelper.cs" />
     <Compile Include="Helpers\CrmMetadataHelper.cs" />
     <Compile Include="PluginState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
