@@ -7,62 +7,64 @@ using Microsoft.Xrm.Sdk.Metadata;
 
 namespace KpdApps.Common.MsCrm2015.Helpers
 {
-	public static class CrmMetadataHelper
-	{
-		private static List<EntityMetadata> _entities = new List<EntityMetadata>();
+    public static class CrmMetadataHelper
+    {
+        private static List<EntityMetadata> _entities = new List<EntityMetadata>();
 
-		private static readonly object Locker = new object();
+        private static readonly object Locker = new object();
 
-		public static EntityMetadata GetEntityMetadata(string entityName, IOrganizationService service)
-		{
-			lock (Locker)
-			{
-				if (_entities == null)
-					_entities = new List<EntityMetadata>();
-			}
+        public static EntityMetadata GetEntityMetadata(string entityName, IOrganizationService service)
+        {
+            lock (Locker)
+            {
+                if (_entities == null)
+                    _entities = new List<EntityMetadata>();
+            }
 
-			EntityMetadata metadata = _entities.FirstOrDefault(a => string.Compare(a.SchemaName, entityName, StringComparison.InvariantCultureIgnoreCase) == 0) ?? LoadEntityMetadata(entityName, service);
+            EntityMetadata metadata = _entities
+                .FirstOrDefault(a => string.Compare(a.SchemaName, entityName, StringComparison.InvariantCultureIgnoreCase) == 0) 
+                ?? LoadEntityMetadata(entityName, service);
 
-			return metadata;
-		}
+            return metadata;
+        }
 
-		private static EntityMetadata LoadEntityMetadata(string entityName, IOrganizationService service)
-		{
-			lock (Locker)
-			{
-				RetrieveEntityRequest request = new RetrieveEntityRequest
-				{
-					LogicalName = entityName,
-					EntityFilters = EntityFilters.Entity | EntityFilters.Attributes
-				};
+        private static EntityMetadata LoadEntityMetadata(string entityName, IOrganizationService service)
+        {
+            lock (Locker)
+            {
+                RetrieveEntityRequest request = new RetrieveEntityRequest
+                {
+                    LogicalName = entityName,
+                    EntityFilters = EntityFilters.Entity | EntityFilters.Attributes
+                };
 
-				RetrieveEntityResponse metadata = (RetrieveEntityResponse)service.Execute(request);
+                RetrieveEntityResponse metadata = (RetrieveEntityResponse)service.Execute(request);
 
-				if (metadata.EntityMetadata == null)
-					return null;
+                if (metadata.EntityMetadata == null)
+                    return null;
 
-				_entities.Add(metadata.EntityMetadata);
-				return metadata.EntityMetadata;
-			}
-		}
+                _entities.Add(metadata.EntityMetadata);
+                return metadata.EntityMetadata;
+            }
+        }
 
-		public static string GetPickListLabel(string entityName, string fieldName, int value, IOrganizationService service)
-		{
-			RetrieveAttributeRequest attributeRequest = new RetrieveAttributeRequest
-			{
-				EntityLogicalName = entityName,
-				LogicalName = fieldName,
-				RetrieveAsIfPublished = true
-			};
+        public static string GetPickListLabel(string entityName, string fieldName, int value, IOrganizationService service)
+        {
+            RetrieveAttributeRequest attributeRequest = new RetrieveAttributeRequest
+            {
+                EntityLogicalName = entityName,
+                LogicalName = fieldName,
+                RetrieveAsIfPublished = true
+            };
 
-			RetrieveAttributeResponse response = (RetrieveAttributeResponse)service.Execute(attributeRequest);
-			EnumAttributeMetadata attributeMetadata = (EnumAttributeMetadata)response.AttributeMetadata;
-			foreach (OptionMetadata optionMeta in attributeMetadata.OptionSet.Options)
-			{
-				if (optionMeta.Value == value)
-					return optionMeta.Label.UserLocalizedLabel.Label;
-			}
-			return string.Empty;
-		}
-	}
+            RetrieveAttributeResponse response = (RetrieveAttributeResponse)service.Execute(attributeRequest);
+            EnumAttributeMetadata attributeMetadata = (EnumAttributeMetadata)response.AttributeMetadata;
+            foreach (OptionMetadata optionMeta in attributeMetadata.OptionSet.Options)
+            {
+                if (optionMeta.Value == value)
+                    return optionMeta.Label.UserLocalizedLabel.Label;
+            }
+            return string.Empty;
+        }
+    }
 }
