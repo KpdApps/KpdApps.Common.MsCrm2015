@@ -21,7 +21,10 @@ namespace KpdApps.Common.MsCrm2015.Helpers
                     _entities = new List<EntityMetadata>();
             }
 
-            EntityMetadata metadata = _entities.FirstOrDefault(a => string.Compare(a.SchemaName, entityName, StringComparison.InvariantCultureIgnoreCase) == 0) ?? LoadEntityMetadata(entityName, service);
+            EntityMetadata metadata = _entities
+                .FirstOrDefault(a => 
+                    string.Compare(a.SchemaName, entityName, StringComparison.InvariantCultureIgnoreCase) == 0) 
+                    ?? LoadEntityMetadata(entityName, service);
 
             return metadata;
         }
