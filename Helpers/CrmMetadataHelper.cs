@@ -84,7 +84,6 @@ namespace KpdApps.Common.MsCrm2015.Helpers
             {
                 return retrievedAttributeMetadata.DisplayName.UserLocalizedLabel.Label;
             }
-
             return retrievedAttributeMetadata.DisplayName.LocalizedLabels[languageCode].Label;
         }
     }
