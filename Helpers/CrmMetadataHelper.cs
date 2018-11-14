@@ -68,7 +68,7 @@ namespace KpdApps.Common.MsCrm2015.Helpers
             return string.Empty;
         }
 
-        public static string GetAttributeLabel(string entityName, string fieldName, int value, IOrganizationService service)
+        public static string GetAttributeLabel(string entityName, string fieldName, int value, IOrganizationService service, int languageCode = -1)
         {
             RetrieveAttributeRequest retrieveAttributeRequest = new RetrieveAttributeRequest
             {
@@ -80,7 +80,12 @@ namespace KpdApps.Common.MsCrm2015.Helpers
             RetrieveAttributeResponse retrieveAttributeResponse = (RetrieveAttributeResponse)service.Execute(retrieveAttributeRequest);
             AttributeMetadata retrievedAttributeMetadata = (AttributeMetadata)retrieveAttributeResponse.AttributeMetadata;
 
-            return retrievedAttributeMetadata.DisplayName.UserLocalizedLabel.Label;
+            if (languageCode < 0)
+            {
+                return retrievedAttributeMetadata.DisplayName.UserLocalizedLabel.Label;
+            }
+
+            return retrievedAttributeMetadata.DisplayName.LocalizedLabels[languageCode].Label;
         }
     }
 }
