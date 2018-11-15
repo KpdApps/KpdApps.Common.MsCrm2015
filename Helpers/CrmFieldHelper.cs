@@ -9,7 +9,9 @@ namespace KpdApps.Common.MsCrm2015.Helpers
         public static object GetFieldValueByFieldAddress(Entity targetEntity, string fieldAddress, IOrganizationService service)
         {
             if (string.IsNullOrEmpty(fieldAddress))
+            {
                 return null;
+            }
 
             string[] fieldsArray = fieldAddress.Split('.');
             string fieldName = string.Empty;
