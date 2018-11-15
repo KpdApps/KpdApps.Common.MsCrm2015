@@ -22,8 +22,9 @@ namespace KpdApps.Common.MsCrm2015.Helpers
             }
 
             EntityMetadata metadata = _entities
-                .FirstOrDefault(a => string.Compare(a.SchemaName, entityName, StringComparison.InvariantCultureIgnoreCase) == 0) 
-                ?? LoadEntityMetadata(entityName, service);
+                .FirstOrDefault(a => 
+                    string.Compare(a.SchemaName, entityName, StringComparison.InvariantCultureIgnoreCase) == 0) 
+                    ?? LoadEntityMetadata(entityName, service);
 
             return metadata;
         }
@@ -65,6 +66,25 @@ namespace KpdApps.Common.MsCrm2015.Helpers
                     return optionMeta.Label.UserLocalizedLabel.Label;
             }
             return string.Empty;
+        }
+
+        public static string GetAttributeLabel(string entityName, string fieldName, int value, IOrganizationService service, int languageCode = -1)
+        {
+            RetrieveAttributeRequest retrieveAttributeRequest = new RetrieveAttributeRequest
+            {
+                EntityLogicalName = entityName,
+                LogicalName = fieldName,
+                RetrieveAsIfPublished = true
+            };
+
+            RetrieveAttributeResponse retrieveAttributeResponse = (RetrieveAttributeResponse)service.Execute(retrieveAttributeRequest);
+            AttributeMetadata retrievedAttributeMetadata = (AttributeMetadata)retrieveAttributeResponse.AttributeMetadata;
+
+            if (languageCode < 0)
+            {
+                return retrievedAttributeMetadata.DisplayName.UserLocalizedLabel.Label;
+            }
+            return retrievedAttributeMetadata.DisplayName.LocalizedLabels[languageCode].Label;
         }
     }
 }
