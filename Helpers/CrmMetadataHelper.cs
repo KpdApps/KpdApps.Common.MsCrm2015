@@ -68,7 +68,7 @@ namespace KpdApps.Common.MsCrm2015.Helpers
             return string.Empty;
         }
 
-        public static string GetAttributeLabel(string entityName, string fieldName, int value, IOrganizationService service, int languageCode = -1)
+        public static string GetAttributeLabel(string entityName, string fieldName, IOrganizationService service, int languageCode = -1)
         {
             RetrieveAttributeRequest retrieveAttributeRequest = new RetrieveAttributeRequest
             {
